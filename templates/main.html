@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Generation from Sketches</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom Styles */
+        body {
+            background-color: #f7f8fc;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .upload-btn, .generate-btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            color: white;
+            background-color: #6c63ff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .upload-btn:hover, .generate-btn:hover {
+            background-color: #5047c5;
+        }
+        .image-preview, .generated-output {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card-title {
+                font-size: 1.2rem;
+            }
+            .upload-btn, .generate-btn {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card shadow-sm p-4">
+        <h2 class="card-title text-center">Face Generation from Sketches</h2>
+        <div class="card-body">
+            <!-- Upload Image Section -->
+            <div class="form-group">
+                <label for="imageUpload">Upload Image</label>
+                <input type="file" id="imageUpload" class="form-control-file upload-btn" accept="image/*" onchange="previewImage(event)">
+            </div>
+            <img id="imagePreview" class="image-preview d-block mx-auto" alt="Uploaded Image Preview">
+
+            <!-- Generate Button -->
+            <div class="text-center mt-4">
+                <button class="generate-btn" onclick="generateImage()">Generate</button>
+            </div>
+            
+            <!-- Output Section -->
+            <div id="outputContainer" class="mt-4">
+                <img id="generatedOutput" class="generated-output d-block mx-auto" alt="Generated Output">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Preview Uploaded Image
+    function previewImage(event) {
+        const imagePreview = document.getElementById('imagePreview');
+        imagePreview.src = URL.createObjectURL(event.target.files[0]);
+        imagePreview.onload = () => {
+            URL.revokeObjectURL(imagePreview.src); // Free memory
+        };
+    }
+
+    // Generate Image Placeholder Function
+    function generateImage() {
+        const outputContainer = document.getElementById('outputContainer');
+        const generatedOutput = document.getElementById('generatedOutput');
+
+        // Here you would add code to generate the output image from the sketch
+        // For now, we use a placeholder image to simulate the generated output
+        generatedOutput.src = 'https://via.placeholder.com/300?text=Generated+Face';
+        generatedOutput.alt = 'Generated Face';
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
