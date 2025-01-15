@@ -134,9 +134,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 For any questions or feedback, please reach out to:
-- **Email**: your-email@example.com
-- **GitHub**: [your-username](https://github.com/your-username)
+- **Email**: swarajsolanke02@gmail.com
+- **GitHub**: [Swaraj Solanke](https://github.com/Swarajsolanke)
 
 ---
 
-Happy Coding! 🚀
+
